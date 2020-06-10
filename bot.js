@@ -16,7 +16,7 @@ var logch = {send: () => console.log("Bot not ready!")};
 function log(title, col, fds){
   var f = []
   for(var i in fds){
-    f.push({name:i.replace(/-/,"").replace(/^\\-/,"-"),value:fds[i],inline:fds[i][0]=="-"});
+    f.push({name:i.replace(/-/,"").replace(/^\\-/,"-"),value:fds[i],inline:i[0]=="-"});
   }
   console.log(f);
   logch.send(new Discord.MessageEmbed().setColor(col).setTitle(title).setAuthor("Kenobi > Logs").addFields(...f).setTimestamp())
